@@ -67,7 +67,7 @@ class S3Stream(BufferedIOBase):
 
     def __init__(self, bucket: str, key: str, *, chunk_size: int = DEFAULT_CHUNK_SIZE,
                  max_file_log_time: int = DEFAULT_ROTATION_TIME_SECS, max_file_size_bytes: int = MAX_FILE_SIZE_BYTES,
-                 encoder: str = 'utf-8', workers: int = 1, compress: bool = False, encryption_options: dict = None, **boto_session_kwargs):
+                 encoder: str = 'utf-8', workers: int = 1, compress: bool = False, encryption_options: dict = {}, **boto_session_kwargs):
         """
 
         :param bucket: name of the s3 bucket
